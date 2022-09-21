@@ -231,14 +231,14 @@ const towers = {
         upgrades:[
             {
                 cost:300,
-                rof:1500,
+                rof:1000,
                 range:45,
                 projectile:{
                     size:70
                 }
             }
         ],
-        cost:500,
+        cost:100,
     },
     'flamethrower':{
         name:'flamethrower',
