@@ -86,6 +86,12 @@ const waves = [
         {level:4,count:4,interval:50},
         {level:3,count:100,interval:100},
         {level:4,count:8,inverval:50}
+    ],
+    [//round 18
+        {level:3,count:500,interval:1},
+    ],
+    [//round 19
+        {level:0,count:1000,interval:1}
     ]
 ]
 
