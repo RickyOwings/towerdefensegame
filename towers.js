@@ -236,6 +236,14 @@ const towers = {
                 projectile:{
                     size:70
                 }
+            },
+            {
+                cost:600,
+                rof:200,
+                range:50,
+                projectile:{
+                    size:75
+                }
             }
         ],
         cost:100,
