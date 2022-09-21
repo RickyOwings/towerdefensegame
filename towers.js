@@ -39,7 +39,7 @@ explosionSound.volume = 0.1
 var thumperSound = new Audio('thumper.mp3')
 explosionSound.volume = 0.1
 
-var sorcererKill = new Audio('sorcererKill.mp3')
+var sorcererKill = new Audio('SorcererKill.mp3')
 sorcererKill.volume = 0.04
 
 const towers = {
