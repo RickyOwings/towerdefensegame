@@ -485,7 +485,7 @@ TowerGen.prototype.normalUpdate = function(progress){
             this.setEnemyShotAt(enemy, distance);
             this.setBarrelAngle(target);
             this.shoot();
-            i = targetArray.length;
+            break;
 
         }
     }
