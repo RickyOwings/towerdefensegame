@@ -1,0 +1,110 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #444444;
+    margin:0;
+}
+canvas{
+    image-rendering: pixelated;
+    position:initial;
+    left:0;
+    top:0;
+    font-smooth: never;
+    -webkit-font-smoothing : none;
+}
+#gameholder{
+    display:block;
+    width: 120vh;
+    height:100vh;
+    z-index: 0;
+}
+#background{
+    z-index: 1;
+    width:100vh;
+    height:100vh
+}
+#enemies{
+    z-index: 2;
+    transform: translate(0,-100%);
+    width:100vh;
+    height:100vh 
+}
+#towers{
+    z-index: 4;
+    transform: translate(0,-200%);
+    width:100vh;
+    height:100vh 
+}
+#towerPreview{
+    z-index: 5;
+    transform: translate(0,-300%);
+    width:100vh;
+    height:100vh 
+}
+#buttonHolder{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 4;
+    width:20vh;
+    height:100vh;
+    transform: translate(100vh, -400%);
+    background-color: #555555;
+}
+button{
+    border-color:black;
+    border-width:4px;
+    border-radius: 2vh;
+    font-size: 100%;
+}
+button:hover{
+    background-color: #ffff88;
+    transition:0.2s;
+}
+button:active{
+    transform: scale(0.9);
+}
+.towerChoice{
+    margin:1vh;
+    width:12vh;
+    height:12vh;
+}
+.startRound{
+    width:16vh;
+    height:16vh;
+}
+.upgrade{
+    width:16vh;
+}
+.changeTarget{
+    width: 16vh ;
+}
+#health{
+    position:absolute;
+    margin-left:1vh;
+    margin-top:1vh;
+    font-size:3vh;
+    color: black;
+    background-color: red;
+    z-index: 255;
+}
+#cash{
+    position:absolute;
+    margin-left:1vh;
+    margin-top:5vh;
+    font-size:3vh;
+    color: black;
+    background-color: gold;
+    border-width:1vh;
+    z-index: 255;
+}
+#round{
+    position:absolute;
+    margin-left:1vh;
+    margin-top:95vh;
+    font-size:3vh;
+    color: black;
+    background-color: white;
+    border-width:1vh;
+    z-index: 255;
+}

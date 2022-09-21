@@ -1,0 +1,30 @@
+<header>
+    <link rel="stylesheet" href="style.css">
+</header>
+<body>
+    <div id="gameholder" oncontextmenu="setSelection(undefined)">
+        <p id="health">Health</p>
+        <p id="cash">Cash</p>
+        <p id="round"></p>
+        <canvas width="600px" height="600px" id="background"></canvas>
+        <canvas width="600px" height="600px" id="enemies"></canvas>
+        <canvas width="600px" height="600px" id="towers"></canvas>
+        <canvas width="600px" height="600px" id="towerPreview" onclick="placeTower()"></canvas>
+        <div id="buttonHolder">
+            <button class="towerChoice" onclick="setSelection('shooter');">Shooter ($100)</button>
+            <button class="towerChoice" onclick="setSelection('bombThrower');">Bomb Thrower ($700)</button>
+            <button class="towerChoice" onclick="setSelection('flamethrower');">Flamethrower ($500)</button>
+            <button class="towerChoice" onclick="setSelection('sorcerer');" >Sorcerer($400)</button>
+            <button class="towerChoice" onclick="setSelection('thumper');">Thumper ($500)</button>
+            <button class="startRound" id="startRound" onclick="startRound()">Start Round</button>
+            <button class="upgrade" id="upgrade" onclick="upgradeTower()">Upgrade</button>
+            <button class="changetarget" id="changetarget" onclick="changeTarget()">ChangeTarget</button>
+        </div>
+    </div>
+    <script src="shortcuts.js"></script>
+    <script src="background.js"></script>
+    <script src="enemies.js"></script>
+    <script src="towers.js"></script>
+    <script src="userInterface.js"></script>
+    <script src="waves.js"></script>
+</body>
