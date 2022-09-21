@@ -79,6 +79,9 @@ button:active{
 .changeTarget{
     width: 16vh ;
 }
+.sell{
+    width: 16vh;
+}
 #health{
     position:absolute;
     margin-left:1vh;

@@ -215,3 +215,9 @@ function changeTarget(){
     }
     drawPreview();
 }
+function sellTower(){
+    if(!statsMenu.show){return}
+    statsMenu.tower.sell();
+    statsMenu.show = false;
+    drawPreview();
+}

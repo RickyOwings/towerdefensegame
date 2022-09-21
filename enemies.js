@@ -18,6 +18,19 @@ var enemyDeath = new Audio('Enemydeath.mp3')
 enemyDeath.volume = 0.04
 
 var health = 100;
+
+function isAlive(){
+    if(health<=0){
+        ectx.font = '40px serif';
+        ectx.fillStyle = 'red';
+        ectx.fillText('Ur ded', 205, 300);
+        ectx.font = '15px serif';
+        ectx.fillText('refresh to start again', 200, 315);
+        return false
+    }
+    return true
+}
+
 var cash = 500;
 function cashUpdate(){document.getElementById('cash').innerHTML = `Cash: $${cash}`}
 cashUpdate();
@@ -45,7 +58,9 @@ function loop(timestamp){
     lastRender = timestamp;
     update(progress);
     draw();
+    if(isAlive()){
     window.requestAnimationFrame(loop);
+    }
 }
 window.requestAnimationFrame(loop);
 
@@ -192,7 +207,7 @@ Enemy.prototype.update = function(progress){
 Enemy.prototype.draw = function(){
     ectx.fillStyle = this.color;
     ectx.fillRect(this.x - this.size/2, this.y - this.size/2, this.size, this.size);
-    ectx.strokeStyle = 'black'
+    ectx.strokeStyle = '#000000aa'
     ectx.strokeRect(this.x - this.size/2, this.y - this.size/2, this.size, this.size);
 }
 Enemy.prototype.die = function(damageHealth){

@@ -92,7 +92,45 @@ const waves = [
     ],
     [//round 19
         {level:0,count:1000,interval:1}
+    ],
+    [//round 20
+        {level:5,count:1,interval:1}
+    ],
+    [//round 21
+        {level:4,count:400,interval:100}
+    ],
+    [//round 22
+        {level:3,count:800,interval:1},
+        {level:4,count:50,interval:50}
+    ],
+    [//round 23
+        {level:4,count:100,interval:1},
+    ],
+    [//round 24
+        {level:3,count:100,interval:1},
+        {level:4,count:100,interval:1},
+        {level:5,count:2,interval:1000},
+    ],
+    [//round 25
+        {level:6,count:1,interval:1}
+    ],
+    [//round 26
+        {level:5,count:10,interval:4000}
+    ],
+    [//round 27
+        {level:4,count:400,interval:1}
+    ],
+    [//round 28
+        {level:5,count:30,interval:2000}
+    ],
+    [//round 29
+        {level:6,count:3,interval:5000}
+    ],
+    [
+        {level:6,count:500,interval:1}
     ]
+    
+    
 ]
 
 

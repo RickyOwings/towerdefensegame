@@ -80,7 +80,7 @@ const towers = {
             {//buy 1
                 cost:100,
                 range:60,
-                rof:450,
+                rof:400,
                 barrel:{
                     height:14
                 },
@@ -92,29 +92,54 @@ const towers = {
             {//buy 2
                 cost:400,
                 range:80,
-                rof:300,
+                rof:400,
                 barrel:{
                     height:16
                 },
                 projectile:{
                     pen:2,
+                    speed:0.6,
+                    damage:1.2
+                }
+            },
+            {
+                cost:600,
+                range:90,
+                rof:300,
+                projectile:{
+                    damage:1.5,
+                    speed:0.7
                 }
             },
             {
                 cost:1500,
                 range:120,
-                rof:150,
+                rof:100,
                 barrel:{
                     height:20
                 },
                 projectile:{
                     speed:0.8,
-                    pen:0,
-                    damage:1,
+                    pen:2,
+                    damage:2,
+                }
+            },
+            {
+                cost:4000,
+                range:150,
+                rof:40,
+                barrel:{
+                    width:6,
+                    dx:3,
+                    height:25,
+                },
+                projectile:{
+                    damage:4,
+                    size:4,
                 }
             }
         ],
-        cost:100,
+        cost:300,
     },
     'bombThrower':{
         name:'bombThrower',
@@ -166,7 +191,7 @@ const towers = {
                 }
             },
             {
-                cost:4000,
+                cost:15000,
                 range:200,
                 rof:100,
                 color:'black',
@@ -224,14 +249,14 @@ const towers = {
         color:'white',
         border:true,
         borderColor:'black',
-        rof:2000,
+        rof:1000,
         range:40,
         accuracy:0,
         shootSound:'thumperSound',
         upgrades:[
             {
                 cost:300,
-                rof:1000,
+                rof:800,
                 range:45,
                 projectile:{
                     size:70
@@ -239,14 +264,29 @@ const towers = {
             },
             {
                 cost:600,
-                rof:200,
+                rof:600,
                 range:50,
                 projectile:{
                     size:75
                 }
+            },
+            {
+                cost:800,
+                rof:400,
+                range:55,
+                projectile:{
+                    size:80
+                }
+            },
+            {
+                cost:8000,
+                projectile:{
+                    damage:0.2,
+                },
+                rof:50,
             }
         ],
-        cost:100,
+        cost:300,
     },
     'flamethrower':{
         name:'flamethrower',
@@ -267,7 +307,7 @@ const towers = {
             type:'normal',
             speed:0.2,
             pen:0,
-            damage:0.3,
+            damage:0.05,
             size:6,
             color:'#ff440055',
             onhit:'nothing',
@@ -278,8 +318,8 @@ const towers = {
         border:true,
         borderColor:'white',
         rof:10,
-        range:60,
-        accuracy:0.4,
+        range:40,
+        accuracy:1.5,
         shootSound:'flamethrower',
         upgrades:[
             {
@@ -432,7 +472,7 @@ TowerGen.prototype.draw = function(){
 }
 
 TowerGen.prototype.update = function(progress){
-    if(this.shootTimer<=0){
+    if(this.shootTimer<0){
         switch(this.type){
             case 'projectile':
                 this.normalUpdate(progress);
@@ -440,8 +480,10 @@ TowerGen.prototype.update = function(progress){
             case 'minions':
                 this.minionUpdate(progress);
             break;
+            case 'aoe':
+                this.normalUpdate(progress);
+            break;
         }
-        this.normalUpdate(progress)
     }else{
         this.shootTimer -= progress
         this.barrel.dy = this.barrel.height*this.shootTimer*this.barrel.knockback/this.rof
@@ -605,7 +647,17 @@ TowerGen.prototype.upgrade = function(){
     cash-=upgrade.cost
 }
 
-
+TowerGen.prototype.sell = function(){
+    let sellValue = towers[this.name].cost
+    for(let i = 0; i<this.level+1; i++){
+        sellValue+=towers[this.name].upgrades[i].cost;
+    }
+    sellValue=sellValue*0.9;
+    console.log(sellValue)
+    cash+=sellValue;
+    cashUpdate();
+    TowerGen.arr.splice(this,1);
+}
 
 
 
@@ -741,7 +793,9 @@ function towerLoop(timestamp){
     lastRenderTower = timestamp;
     tUpdate(progress);
     tDraw();
-    window.requestAnimationFrame(towerLoop);
+    if(isAlive()){
+        window.requestAnimationFrame(towerLoop);
+    }
 }
 window.requestAnimationFrame(towerLoop);
 
