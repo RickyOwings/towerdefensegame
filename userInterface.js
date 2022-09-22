@@ -3,7 +3,7 @@ const pctx = towerPreview.getContext('2d');
 
 var song = new Audio('TSDSong.mp3');
 song.volume = 0.6
-Q 
+
 var gameStarted = false;
 
 function playSong(){
