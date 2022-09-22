@@ -127,7 +127,7 @@ const waves = [
         {level:6,count:3,interval:5000}
     ],
     [
-        {level:6,count:500,interval:1}
+        {level:6,count:100,interval:1}
     ]
     
     
