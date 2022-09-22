@@ -23,6 +23,10 @@
             <button class="sell" id="sell" onclick="sellTower()">Sell</button>
         </div>
     </div>
+    <div id="sliderContainer">
+        <p id="volumeLabel">Music Volume</p>
+        <input type="range" min="0" max="100" class="slider" id="volume" onchange="changeVolume()">
+    </div>
     <script src="shortcuts.js"></script>
     <script src="background.js"></script>
     <script src="enemies.js"></script>

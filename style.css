@@ -111,3 +111,7 @@ button:active{
     border-width:1vh;
     z-index: 255;
 }
+#volumeLabel{
+    color:white;
+    margin:0;
+}

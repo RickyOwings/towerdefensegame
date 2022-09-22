@@ -13,6 +13,12 @@ function playSong(){
     setTimeout(playSong,song.duration*1000);
 }
 
+const volumeSlider = document.getElementById('volume');
+
+function changeVolume(){
+    song.volume = volumeSlider.value*0.6/100
+}
+
 var selection = undefined
 function setSelection(selectionString){
     selection = selectionString;
