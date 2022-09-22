@@ -1,6 +1,18 @@
 const towerPreview = document.getElementById('towerPreview');
 const pctx = towerPreview.getContext('2d');
 
+var song = new Audio('TSDSong.mp3');
+song.volume = 0.6
+
+var gameStarted = false;
+
+function playSong(){
+    song.pause();
+    song.currentTime = 0;
+    song.play();
+    setTimeout(playSong,song.duration*1000);
+}
+
 var selection = undefined
 function setSelection(selectionString){
     selection = selectionString;

@@ -141,6 +141,11 @@ var enemiesSpawned = 0;
 var waveOngoing = false;
 
 function startRound(){
+    if(!gameStarted){
+        playSong();
+        gameStarted = true;
+    }
+
     if(waveOngoing){return}
     waveOngoing = true;
 
