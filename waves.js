@@ -126,7 +126,7 @@ const waves = [
     [//round 29
         {level:6,count:3,interval:5000}
     ],
-    [
+    [//round 30
         {level:6,count:100,interval:1}
     ]
     
