@@ -117,7 +117,7 @@ const enemyStats = [
         speed:0.029,
         type:'normal',
         health:400,
-        color:'#red',
+        color:'red',
         size:27,
         extraAfterDeath:5,
     },
