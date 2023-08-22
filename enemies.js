@@ -3,7 +3,7 @@ const ectx = enemyBoard.getContext('2d');
 
 var hidden = false;
 
-document.addEventListener('visibilitychange', (event)=>{
+document.addEventListener('visibilitychange', ()=>{
     if(document.hidden){
         hidden = true;
         loop(0);
